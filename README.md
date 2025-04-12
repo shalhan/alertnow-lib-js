@@ -54,7 +54,7 @@ import AlertNow from 'alertnow';
 
 function App() {
   useEffect(() => {
-    
+
     // Configure AlertNow once when the app initializes
     const alertnow = AlertNow.getInstance()
       .setDriver("discord")
@@ -92,9 +92,13 @@ export default App;
 
 ## API Reference
 
-### `AlertNow.getInstance()`
+### `Alert`
 
-Gets the singleton instance of AlertNow.
+The interface of AlertNow.
+
+### `new AlertNowBuilder()`
+
+Create the instance of AlertNow.
 
 ### `alertnow.setDriver(driver)`
 
@@ -124,15 +128,6 @@ Sends a notification without blocking execution (fire and forget).
 - `message` (string): Message content
 - `data` (object, optional): Additional data to include in the notification
 - Returns: void
-
-### `alertnow.sendAsync(title, message, data)`
-
-Sends a notification and returns a Promise for when it completes.
-
-- `title` (string): Title of the notification
-- `message` (string): Message content
-- `data` (object, optional): Additional data to include in the notification
-- Returns: Promise that resolves when the notification is sent
 
 ## Security Notes
 
