@@ -6,7 +6,9 @@ A lightweight notification library for sending alerts to various platforms. Curr
 
 ```bash
 npm install alertnow
+
 # or
+
 yarn add alertnow
 ```
 
@@ -24,11 +26,11 @@ yarn add alertnow
 ```javascript
 // Import the library
 const AlertNow = require('alertnow');
+
 // or in TypeScript/ES modules
 import AlertNow from 'alertnow';
 
-// Configure AlertNow using the builder pattern
-const alertnow = AlertNow.getInstance()
+const alertnow = new AlertNowBuilder()
   .setDriver("discord")
   .setWebhook("https://discord.com/api/webhooks/your-webhook-url")
   .build();
@@ -52,6 +54,7 @@ import AlertNow from 'alertnow';
 
 function App() {
   useEffect(() => {
+    
     // Configure AlertNow once when the app initializes
     const alertnow = AlertNow.getInstance()
       .setDriver("discord")
